@@ -10,3 +10,15 @@ IF EXIST %SRC% (
 )
 
 EXIT /B 0
+@echo off
+REM SunEatsSoup SetupComplete script: run once at the end of install (runs as SYSTEM)
+REM This script copies the custom wallpaper over the default wallpaper so first user sees it.
+
+SET SRC="%WINDIR%\Web\Wallpaper\SunEatsSoup\backgroundDefault.jpg"
+SET DST="%WINDIR%\Web\Wallpaper\Windows\img0.jpg"
+
+IF EXIST %SRC% (
+    COPY /Y %SRC% %DST%
+)
+
+EXIT /B 0
